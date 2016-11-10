@@ -1,0 +1,128 @@
+.material-btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.298039);
+  -webkit-transition-property: box-shadow, background-color;
+  transition-property: box-shadow, background-color;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  padding: 5px 15px;
+  text-transform: uppercase;
+}
+
+.material-btn:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.298039);
+}
+
+.material-btn:active,
+.material-btn:focus {
+  outline: 0 !important;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.298039);
+}
+
+.material-btn-group_lg .material-btn,
+.material-btn_lg {
+  padding: 7px 10px;
+  font-size: 16px;
+}
+
+.material-btn-group_sm .material-btn,
+.material-btn_sm {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.material-btn-group_xs .material-btn,
+.material-btn_xs {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+.material-btn__caret {
+  margin-left: 5px;
+}
+
+.material-btn {
+  background-color: #eee;
+  color: #000;
+  border-color: #eee;
+}
+
+.material-btn:active,
+.material-btn:focus {
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+}
+
+.material-btn-primery {
+  background-color: #007ee5;
+  border-color: #007ee5;
+  color: #fff;
+}
+
+.material-btn-primery:hover {
+  color: #fff;
+  background-color: #1588e5;
+  border-color: #1588e5;
+}
+
+.material-btn-primery:active,
+.material-btn-primery:focus {
+  background-color: #006ac1;
+  border-color: #006ac1;
+  color: #fff;
+}
+
+.material-btn-primery.outline {
+  background: white;
+  color: #007ee5;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.material-btn.full-size {
+  width: 100%;
+  padding: 10px;
+}
+
+.material-dropdown_btn {
+  position: relative;
+  padding-right:30px;
+  border: none;
+  background: none;  
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 7px 50px 5px 5px;
+  &::after{
+    content: '\f35f';
+    font-size: 24px; 
+    position: absolute;
+    right: 15px;
+    top: 0px; 
+    font-family: 'Ionicons';
+  }
+  &.active{
+    &::after{
+      content: '\f365';
+    }
+  }
+}
+
+.material-dropdown {
+    padding: 5px 0;
+    background: rgba(221, 221, 221, 0.2);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 1px 9px 0 rgba(0, 0, 0, 0.1);
+    &.active{
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+

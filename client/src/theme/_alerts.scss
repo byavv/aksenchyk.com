@@ -1,0 +1,90 @@
+.material-alert {
+  border-radius: 0;
+  box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  padding: 10px;
+}
+
+.material-alert__close {
+  opacity: 1;
+  text-shadow: none;
+}
+
+.material-alert {
+  background-color: #eee;
+  color: #000;
+}
+
+.material-alert__close {
+  color: #000;
+}
+
+.material-alert__close:hover {
+  opacity: 1;
+  color: #000;
+}
+
+.material-alert_primary {
+  background-color: #4092d9;
+  color: #fff;
+}
+
+.material-alert_primary .material-alert__close {
+  color: #fff;
+}
+
+.material-alert_primary .material-alert__close:hover {
+  color: #fff;
+}
+
+.material-alert_success {
+  background-color: #68c368;
+  color: #fff;
+}
+
+.material-alert_success .material-alert__close {
+  color: #fff;
+}
+
+.material-alert_success .material-alert__close:hover {
+  color: #fff;
+}
+
+.material-alert_info {
+  background-color: #8bdaf2;
+  color: #fff;
+}
+
+.material-alert_info .material-alert__close {
+  color: #fff;
+}
+
+.material-alert_info .material-alert__close:hover {
+  color: #fff;
+}
+
+.material-alert_warning {
+  background-color: #f2a12e;
+  color: #fff;
+}
+
+.material-alert_warning .material-alert__close {
+  color: #fff;
+}
+
+.material-alert_warning .material-alert__close:hover {
+  color: #fff;
+}
+
+.material-alert_danger {
+  background-color: #f3413c;
+  color: #fff;
+}
+
+.material-alert_danger .material-alert__close {
+  color: #fff;
+}
+
+.material-alert_danger .material-alert__close:hover {
+  color: #fff;
+}

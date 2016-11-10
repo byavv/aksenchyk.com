@@ -1,0 +1,131 @@
+.form-group {
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-control {
+  display: block;
+  height: 36px;
+  width: 100%;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom: 1.5px solid #d0dce7;
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: inherit;
+  float: inherit;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.form-control:focus {
+  border-color: #b0bac3;
+  outline: none;
+  box-shadow: none;
+}
+
+label {
+  position: absolute;
+  top: -18px;
+  color: #999;
+  font-size: 12px;
+  font-weight: 300;
+
+  transition: .2s ease all;
+  -moz-transition: .2s ease all;
+  -webkit-transition: .2s ease all;
+}
+
+.form-horizontal .control-label {
+  position: relative;
+  top: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    font-size: 16px;
+  }
+}
+
+.form-group {
+  .info-label {
+    font-size: 14px;
+    color: #999;
+  }
+
+  .invalid-label {
+    display: none;
+    color: #f3413c;
+  }
+
+  .float-label {
+    left: 0;
+    top: 7px;
+    font-size: 16px;
+    pointer-events: none;
+  }
+}
+
+/* active state */
+.form-control:focus ~ .float-label,
+.form-control:valid ~ .float-label {
+  top: -18px;
+  font-size: 12px;
+}
+
+/* input colors ---- */
+/*  ------ default ---- */
+.form-control:focus {
+  label {
+    color: #03a9f4;
+  }
+}
+/*  ------ invalid ---- */
+.form-group.invalid {
+  .invalid-label {
+    display: inline;
+  }
+
+  .float-label {
+    color: #f3413c;
+    top: -18px;
+    font-size: 12px;
+  }
+
+  .form-control {
+    border-bottom: 1.5px solid #f3413c!important;
+  }
+}
+
+.image-block {
+  padding-left: 25px;
+  margin-left: 5px;
+  position: relative;
+
+  > i,
+  img {
+    font-size: 1.2em;
+    display: block;
+    position: absolute;
+    color: #b0b3b5;
+    left: 5px;
+    top: 2px;
+    transition-duration: .2s;
+  }
+
+  > span {
+    font-size: .8em;
+  }
+}
