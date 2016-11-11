@@ -16,7 +16,7 @@ import { SkillsModule } from './skills';
     AppComponent
   ],
   imports: [
-    AppRoutingModule,///
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,
