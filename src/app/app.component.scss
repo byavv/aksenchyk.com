@@ -1,0 +1,119 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.layout-container {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  padding-top: 30px;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.header {
+  position: fixed;
+  height: 30px;
+  background: #ccc;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  > a {
+    float: right;
+    color: white;
+    padding: 2px 5px 0;
+  }
+
+  img.gh-logo {
+    width: 25px;
+
+    &.github {
+      width: 22px;
+    }
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {}
+
+.block-container {
+  padding: 15px;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+
+  > * {
+    position: absolute;
+  }
+}
+
+.menu-container {
+  max-width: 52.5rem;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  padding: 5% 0;
+  display: flex;
+  margin: 0 auto;
+}
+
+.main-block {
+  width: 67%;
+  position: relative;
+  margin: 15px;
+  @include aspect-ratio(10, 10);
+  transition: all .2s ease-in-out;
+
+  > .about {
+    background: red;
+
+    &:hover {
+      transform: scale(1.05);
+      z-index: 999;
+    }
+  }
+
+}
+
+.side-block {
+  @include aspect-ratio(30, 10);
+  position: relative;
+  width: 33%;
+
+  .side-nav-block {
+    * {
+      margin-bottom: 15px;
+      width: 100%;
+      height: 45%;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 50%;
+      width: 100%;
+    }
+
+    .skills {
+      background: green;
+    }
+
+    .portfolio {
+      background: yellow;
+    }
+  }
+}
