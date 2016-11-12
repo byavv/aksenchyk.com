@@ -1,3 +1,4 @@
+@import '../theme/animations';
 @mixin aspect-ratio($width, $height) {
   position: relative;
 
@@ -8,12 +9,18 @@
     padding-top: ($height / $width) * 100%;
   }
 
-  > .content {
+  > div {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+  }
+}
+@mixin bigger($how) {
+  &:hover {
+    transform: scale($how);
+    z-index: 999;
   }
 }
 
@@ -32,7 +39,7 @@
   background: #ccc;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 1002;
 
   > a {
     float: right;
@@ -69,34 +76,55 @@
   padding: 5% 0;
   display: flex;
   margin: 0 auto;
+
+  .nav-link-container {
+    transition: all .5s ease-in-out!important;
+
+    > a {
+      display: block;
+      height: 100%;
+      background: grey;
+      transition: all .2s ease-in-out;
+      @include bigger(1.045);
+    }
+  }
+
+  &.navigateFrom {
+    .nav-link-container {
+      overflow: hidden;
+    }
+
+    .nav-link-container > a.about {     
+      @include hide-left-to-right(.7s, 0.3s);
+    }
+
+    .nav-link-container > a.skills {     
+      @include hide-right-to-left(.7s, 0.2s);
+    }
+
+    .nav-link-container > a.portfolio {     
+      @include hide-bottom-to-top(.7s, 0.4s);
+    }
+  }
 }
 
 .main-block {
   width: 67%;
   position: relative;
-  margin: 15px;
-  @include aspect-ratio(10, 10);
-  transition: all .2s ease-in-out;
 
-  > .about {
-    background: red;
-
-    &:hover {
-      transform: scale(1.05);
-      z-index: 999;
-    }
+  &:hover {
+    z-index: 1001!important;
   }
-
+  @include aspect-ratio(10, 10);
 }
 
 .side-block {
-  @include aspect-ratio(30, 10);
+  @include aspect-ratio(20, 10);
   position: relative;
   width: 33%;
 
   .side-nav-block {
-    * {
-      margin-bottom: 15px;
+    > * {
       width: 100%;
       height: 45%;
     }
@@ -107,13 +135,21 @@
       padding-top: 50%;
       width: 100%;
     }
-
-    .skills {
-      background: green;
-    }
-
-    .portfolio {
-      background: yellow;
-    }
   }
+}
+
+a.about {
+  background: tomato!important;
+}
+
+a.skills {
+
+  background: #d6dfe2!important;
+
+}
+
+a.portfolio {
+
+  background: #eee!important;
+
 }

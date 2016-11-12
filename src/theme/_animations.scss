@@ -1,0 +1,81 @@
+@mixin hide-left-to-right($duration, $delay) {
+  -webkit-animation: hide-left-to-right-anim $duration normal forwards ease-in-out;
+  animation: hide-left-to-right-anim $duration normal forwards ease-in-out;
+  animation-delay: $delay;
+}
+@mixin hide-right-to-left($duration, $delay) {
+  -webkit-animation: hide-right-to-left-anim $duration normal forwards ease-in-out;
+  animation: hide-right-to-left-anim $duration normal forwards ease-in-out;
+  animation-delay: $delay;
+}
+@mixin hide-bottom-to-top($duration, $delay) {
+  -webkit-animation: hide-bottom-to-top-anim $duration normal forwards ease-in-out;
+  animation: hide-bottom-to-top-anim $duration normal forwards ease-in-out;
+  animation-delay: $delay;
+}
+@keyframes hide-left-to-right-anim {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(100%) translateX(-7px);
+    -ms-transform: translateX(100%) translateX(-7px);
+    transform: translateX(100%) translateX(-7px);
+    opacity: .6;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+@keyframes hide-right-to-left-anim {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(-100%) translateX(7px);
+    -ms-transform: translateX(-100%) translateX(7px);
+    transform: translateX(-100%) translateX(7px);
+    opacity: .6;
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes hide-bottom-to-top-anim {
+  0% {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateY(-100%) translateX(10px);
+    -ms-transform: translateY(-100%) translateX(10px);
+    transform: translateY(-100%) translateX(10px);
+    opacity: .6;
+  }
+
+  100% {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}

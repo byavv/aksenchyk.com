@@ -11,6 +11,7 @@ import { AboutModule } from './about';
 import { PortfolioModule } from './portfolio';
 import { SkillsModule } from './skills';
 
+import './rxjs-extensions';
 @NgModule({
   declarations: [
     AppComponent
