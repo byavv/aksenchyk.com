@@ -28,9 +28,8 @@
   position: absolute;
   min-height: 100%;
   width: 100%;
-  padding-top: 30px;
   overflow: hidden;
-  padding: 15px;
+  padding: 30px 0;
 }
 
 .header {
@@ -39,23 +38,28 @@
   background: #ccc;
   top: 0;
   width: 100%;
-  z-index: 1002;
+  z-index: 1003;
 
   > a {
     float: right;
     color: white;
-    padding: 2px 5px 0;
-  }
+    padding: 1px 7px 0;
 
-  img.gh-logo {
-    width: 25px;
-
-    &.github {
-      width: 22px;
+    > i {
+      font-size: 1.3em;
     }
   }
 }
-@media (max-height: 600px) and (orientation: landscape) {}
+
+.router-page {
+  position: absolute;
+  padding: 30px 15px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: antiquewhite;
+  z-index: 1002;
+}
 
 .block-container {
   padding: 15px;
@@ -67,8 +71,13 @@
     position: absolute;
   }
 }
+@media (max-width: 992px) {
+  .main-menu-container {
+    width: 70%!important;
+  }
+}
 
-.menu-container {
+.main-menu-container {
   max-width: 52.5rem;
   text-align: center;
   height: 100%;
@@ -79,31 +88,38 @@
 
   .nav-link-container {
     transition: all .5s ease-in-out!important;
+    overflow: hidden;
 
     > a {
       display: block;
       height: 100%;
       background: grey;
       transition: all .2s ease-in-out;
-      @include bigger(1.045);
+      @include bigger(1.06);
+      text-transform: uppercase;
+      padding: 25px;
+    }
+
+    &:hover {
+      overflow: visible;
     }
   }
 
   &.navigateFrom {
-    .nav-link-container {
+    .nav-link-container:hover {
       overflow: hidden;
     }
 
-    .nav-link-container > a.about {     
-      @include hide-left-to-right(.7s, 0.3s);
+    .nav-link-container > a.about {
+      @include hide-left-to-right(.7s, 0s);
     }
 
-    .nav-link-container > a.skills {     
-      @include hide-right-to-left(.7s, 0.2s);
+    .nav-link-container > a.skills {
+      @include hide-right-to-left(.8s, 0s);
     }
 
-    .nav-link-container > a.portfolio {     
-      @include hide-bottom-to-top(.7s, 0.4s);
+    .nav-link-container > a.portfolio {
+      @include hide-bottom-to-top(.9s, 0s);
     }
   }
 }
@@ -143,13 +159,9 @@ a.about {
 }
 
 a.skills {
-
   background: #d6dfe2!important;
-
 }
 
 a.portfolio {
-
   background: #eee!important;
-
 }

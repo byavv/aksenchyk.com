@@ -6,10 +6,10 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 
-import { HomeModule } from './home';
-import { AboutModule } from './about';
-import { PortfolioModule } from './portfolio';
-import { SkillsModule } from './skills';
+//import { HomeModule } from './home';
+//import { AboutModule } from './about';
+//import { PortfolioModule } from './portfolio';
+//import { SkillsModule } from './skills';
 
 import './rxjs-extensions';
 @NgModule({
