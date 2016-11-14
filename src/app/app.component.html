@@ -8,7 +8,7 @@
     <div class="home" style='position:fixed;left:50px; top:50px;z-index: 100300;'>
         <a class="join" routerLink="/">HOME</a>
     </div>
-    <div class="layout-container" [@mainContainerState]='sideMenu'>
+    <div class="layout-container" [@mainContainerState]='sideMenu' (@mainContainerState.done)="animationDone($event)">
         <!--<div class="router-page" [@routerContainerState]="routeContainerState">-->
         <div>
             <router-outlet></router-outlet>

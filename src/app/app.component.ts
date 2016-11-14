@@ -8,7 +8,7 @@ import {
   state,
   style, sequence,
   transition,
-  animate, keyframes, HostBinding
+  animate, keyframes, HostBinding, AnimationPlayer,
 } from '@angular/core';
 
 import { getDOM, DomAdapter } from '@angular/platform-browser/src/dom/dom_adapter';
@@ -92,5 +92,8 @@ export class AppComponent {
     } else {
       this.sideMenu = 'sideclosed';
     }
+  }
+  animationDone(evt){
+    console.log(evt);
   }
 }
