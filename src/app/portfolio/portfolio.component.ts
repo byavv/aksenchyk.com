@@ -16,7 +16,7 @@ import { Component, trigger, transition, animate, style, state, OnInit, HostBind
                 style({
                     transform: 'translateX(0%)'
                 }),
-                animate('1s ease-in', style({ transform: 'translateX(-100%)' }))
+                animate('1s ease-in', style({ transform: 'translateX(100%)' }))
             ])
         ]),
     ],

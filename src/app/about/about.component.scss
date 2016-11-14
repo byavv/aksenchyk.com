@@ -1,6 +1,50 @@
-div {
+div.page-container {
   background: sandybrown;
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+/*.image-container {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}*/
+
+/*.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  width: auto;
+  height: auto;
+}*/
+
+.image-container {
+  background: url("assets/developer.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;  
+}
+
+.content-container {
+  padding: 30px;
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  height: 100%;
+  background: lavenderblush;
+  font-size: 3em;
 }

@@ -25,7 +25,7 @@ var startingStyles = (styles) => {
                 style({
                     transform: 'translateX(0%)'
                 }),
-                animate('1s ease-in', style({ transform: 'translateX(-100%)' }))
+                animate('1s ease-in', style({ transform: 'translateX(100%)' }))
             ])
         ]),
     ],
@@ -38,8 +38,6 @@ var startingStyles = (styles) => {
         '[style.height]': "'100%'",
         '[style.z-index]': "'100300'"
     }
-
-
 })
 export class AboutComponent implements OnInit {
     constructor() { }

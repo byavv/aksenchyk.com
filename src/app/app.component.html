@@ -1,37 +1,53 @@
-<nav class="header">
-    <a target="_blank" href="http://github.com/byavv">
-        <i class='ion-social-github'></i>
-    </a>
-    <a target="_blank" href="https://www.linkedin.com/in/viacheslav-aksenchyk-99bbb7131">
-        <i class="ion-social-linkedin"></i>
-    </a>
-    <a class="join" routerLink="/join">Join me</a>
-</nav>
-<div class="layout-container">
-    <div class="home" style='position:fixed;left:50px; top:50px;z-index: 100400;'>
+<div class="main-layout">
+    <nav class="header">
+        <a target="_blank" href="https://www.linkedin.com/in/viacheslav-aksenchyk-99bbb7131">
+            <i class="ion-social-linkedin"></i>
+        </a>
+        <span class="join">Join me</span>
+    </nav>
+    <div class="home" style='position:fixed;left:50px; top:50px;z-index: 100300;'>
         <a class="join" routerLink="/">HOME</a>
     </div>
-    <!--<div class="router-page" [@routerContainerState]="routeContainerState">-->
-    <div>
-        <router-outlet></router-outlet>
-    </div>
-    <div class="main-menu-container" [ngClass]='{navigateFrom: navigated}'>
-        <div class="main-block">
-            <div class="nav-link-container">
-                <a class='about' (click)='onAbout()'> About </a>
-            </div>
+    <div class="layout-container" [@mainContainerState]='sideMenu'>
+        <!--<div class="router-page" [@routerContainerState]="routeContainerState">-->
+        <div>
+            <router-outlet></router-outlet>
         </div>
-        <div class="side-block">
-            <div class="side-nav-block">
+        <div class="main-menu-container" [ngClass]='{navigateFrom: navigated}'>
+            <div class="main-block">
                 <div class="nav-link-container">
-                    <a class='skills' (click)="onSkills()"> Skills </a>
+                    <a class='about' (click)='onAbout()'> About </a>
                 </div>
-                <div class="nav-link-container">
-                    <a class='portfolio' (click)="onPortfolio()"> Portfolio </a>
+            </div>
+            <div class="side-block">
+                <div class="side-nav-block">
+                    <div class="nav-link-container">
+                        <a class='skills' (click)="onSkills()"> Skills </a>
+                    </div>
+                    <div class="nav-link-container">
+                        <a class='portfolio' (click)="onPortfolio()"> Portfolio </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Only shown when navigated-->
-    <div class="duplicate-side-menu-container"></div>
+    <div [class.hidden]='!navigated' [class.hidden]="!navigated" class='menu-switch-button'  [@switchButtonState]='sideMenu'>
+        <div id="nav-icon3" [class.open]="sideMenu == 'sideopened'" (click)='switchMenu()'>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="overlay" [@shadowState]='sideMenu' (click)="switchMenu()">
+
+    </div>
+    <div class="duplicate-side-menu-container" [@sideMenuState]='sideMenu'>
+        <ul>
+            <li> <a class='about' (click)="onAbout(); switchMenu()"> About </a></li>
+            <li> <a class='skills' (click)="onSkills(); switchMenu()"> Skills </a></li>
+            <li> <a class='portfolio' (click)="onPortfolio(); switchMenu()"> Portfolio </a></li>
+        </ul>
+    </div>
 </div>

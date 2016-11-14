@@ -38,7 +38,7 @@ export class AppComponent {
 
   isHidden: boolean = true;
   navigated: boolean = false;
-
+  sideMenu: string = 'sideclosed';
 
   ngAfterViewInit() {
     this._domAdapter = getDOM();
@@ -84,5 +84,13 @@ export class AppComponent {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  switchMenu() {
+    if (this.sideMenu == 'sideclosed') {
+      this.sideMenu = 'sideopened';
+    } else {
+      this.sideMenu = 'sideclosed';
+    }
   }
 }

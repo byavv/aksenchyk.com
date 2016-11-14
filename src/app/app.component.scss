@@ -39,11 +39,16 @@
   top: 0;
   width: 100%;
   z-index: 1003;
+  padding: 0 15px;
 
-  > a {
+  > span {
+    margin-top: 2px;
+  }
+
+  > * {
     float: right;
     color: white;
-    padding: 1px 7px 0;
+    margin-left: 10px;
 
     > i {
       font-size: 1.3em;
@@ -164,4 +169,48 @@ a.skills {
 
 a.portfolio {
   background: #eee!important;
+}
+
+.duplicate-side-menu-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  transform: translateX(100%);
+
+  > ul {
+    list-style: none;
+    padding: 100px 15px;
+
+    > li {
+      text-align: right;
+      margin: 5px 0 0;
+
+      > a {
+        color: #7f8f97;
+        display: inline-block;
+        font-size: 1.25rem;
+        letter-spacing: .25rem;
+        padding: 1px 10px;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.25);
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100350;
+}
+
+.menu-switch-button {
+  position: fixed;
+  right: 15px;
+  top: 50px;
+  z-index: 100400;
 }
